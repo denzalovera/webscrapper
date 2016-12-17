@@ -1,10 +1,13 @@
-from flask import Flask
+# import os
+from flask import Flask, render_template
+
 app = Flask(__name__)
+# app.config.from_object(os.environ['APP_SETTINGS'])
 
 
 @app.route('/')
 def hello():
-    return "hello world!"
+    return render_template('landing_page.html')
 
 
 @app.route('/<name>')
